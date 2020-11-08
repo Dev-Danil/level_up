@@ -1,0 +1,13 @@
+{
+    "name": "lvl_up/example",
+    "description": "example packege",
+    "authors": [
+        {
+            "name": "Dev-Danil",
+            "email": "danich_stepkin@mail.ru"
+        }
+    ],
+    "require": {
+        "guzzlehttp/psr7": "^1.7"
+    }
+}
