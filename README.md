@@ -1,1 +1,2 @@
-Hello, Hexlet! How are you?
+Hello, Developer!
+Pls, rate my shit.
