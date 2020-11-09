@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Authorization</title>
@@ -58,6 +58,9 @@
             border: none;
             cursor: pointer;
         }
+        .rd{
+            color: darkred;
+        }
         ::-webkit-input-placeholder {color:#3f3f44; padding-left: 10px;} // Это стили для placeholder
         ::-moz-placeholder          {color:#3f3f44; padding-left: 10px;} // Это стили для placeholder
         :-moz-placeholder           {color:#3f3f44; padding-left: 10px;} // Это стили для placeholder
@@ -74,11 +77,29 @@
             <input type="email" name="email" placeholder="Введите Ваш имейл" required >
 
             <label>Введите Ваш пароль</label>
-            <input type="password" name="pass" placeholder="Введите пароль" required >
+            <input type="password" name="pass" placeholder="Введите пароль"  >
             <button class="form_auth_button" type="submit" name="form_auth_submit">Войти</button>
         </form>
     </div>
 </div>
+
+<?php session_start();
+if ($_SESSION["status"] == "100") { ?>
+    <div class="form_auth_block form_auth_block_content form_auth_block_head_text form_auth_style rd">
+        <?php echo "Введён неверный e-mail"; ?></div>
+<?php } ?>
+<?php if ($_SESSION["status"] == "200") { ?>
+    <div class="form_auth_block form_auth_block_content form_auth_block_head_text form_auth_style rd">
+        <?php echo "Введён неверный пароль"; ?></div>
+<?php } ?>
+<?php if ($_SESSION["status"] == "300") { ?>
+    <div class="form_auth_block form_auth_block_content form_auth_block_head_text form_auth_style rd">
+        <?php echo "Введёны пустые поля"; ?></div>
+<?php } ?>
+<?php
+    session_unset();
+    session_destroy();
+?>
 
 </body>
 </html>
