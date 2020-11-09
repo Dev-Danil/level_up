@@ -7,7 +7,6 @@ function index()
 {
     $email = testForEmptiness($_POST['email']);
     $hashPass = md5(testForEmptiness($_POST['pass']));
-    echo $hashPass;
 
     $dataCsv = array_map('str_getcsv', file("storage.csv"));
 
